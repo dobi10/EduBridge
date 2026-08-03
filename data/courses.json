@@ -1,0 +1,105 @@
+[
+ {
+  "name":"HTML",
+  "level":"Beginner",
+  "category":"Web Development",
+  "description":"Learn website structure and create your first webpages.",
+  "lessons":50
+ },
+
+ {
+  "name":"CSS",
+  "level":"Beginner",
+  "category":"Web Development",
+  "description":"Master layouts, animations and responsive design.",
+  "lessons":60
+ },
+
+ {
+  "name":"JavaScript",
+  "level":"Intermediate",
+  "category":"Web Development",
+  "description":"Learn programming logic, DOM, APIs and modern JS.",
+  "lessons":100
+ },
+
+ {
+  "name":"Python",
+  "level":"Beginner",
+  "category":"Programming",
+  "description":"Learn programming, automation and AI basics.",
+  "lessons":120
+ },
+
+ {
+  "name":"Java",
+  "level":"Intermediate",
+  "category":"Programming",
+  "description":"Object oriented programming and application development.",
+  "lessons":100
+ },
+
+ {
+  "name":"C++",
+  "level":"Advanced",
+  "category":"Programming",
+  "description":"Algorithms, memory and competitive programming.",
+  "lessons":90
+ },
+
+ {
+  "name":"C",
+  "level":"Intermediate",
+  "category":"Programming",
+  "description":"Learn computer fundamentals and low level programming.",
+  "lessons":80
+ },
+
+ {
+  "name":"SQL",
+  "level":"Beginner",
+  "category":"Database",
+  "description":"Learn databases and data management.",
+  "lessons":50
+ },
+
+ {
+  "name":"Cybersecurity",
+  "level":"Advanced",
+  "category":"Security",
+  "description":"Learn networks, security and ethical hacking concepts.",
+  "lessons":100
+ },
+
+ {
+  "name":"Kotlin",
+  "level":"Intermediate",
+  "category":"Mobile",
+  "description":"Build Android applications.",
+  "lessons":80
+ },
+
+ {
+  "name":"Swift",
+  "level":"Intermediate",
+  "category":"Mobile",
+  "description":"Create iOS applications.",
+  "lessons":80
+ },
+
+ {
+  "name":"Go",
+  "level":"Advanced",
+  "category":"Programming",
+  "description":"Build fast backend systems.",
+  "lessons":70
+ },
+
+ {
+  "name":"Rust",
+  "level":"Advanced",
+  "category":"Programming",
+  "description":"Memory safe systems programming.",
+  "lessons":70
+ }
+]
