@@ -1,0 +1,211 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#0b1020;
+    color:white;
+    line-height:1.6;
+}
+
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#11182e;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#4da6ff;
+}
+
+
+nav{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+
+nav a:hover{
+    color:#4da6ff;
+}
+
+
+button{
+    padding:10px 22px;
+    border:none;
+    border-radius:20px;
+    background:#4da6ff;
+    color:white;
+    cursor:pointer;
+}
+
+
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:60px 8%;
+    gap:40px;
+}
+
+
+.hero-text{
+    max-width:600px;
+}
+
+
+.hero h1{
+    font-size:55px;
+    line-height:1.2;
+    background:linear-gradient(90deg,#4da6ff,#9b59ff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+
+.hero p{
+    margin:25px 0;
+    font-size:20px;
+    color:#ccc;
+}
+
+
+.start{
+    display:inline-block;
+    padding:15px 35px;
+    background:#4da6ff;
+    border-radius:30px;
+    text-decoration:none;
+    color:white;
+}
+
+
+
+.code-box{
+    background:#050914;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 30px #000;
+    animation:float 3s infinite;
+}
+
+
+pre{
+    color:#00ff99;
+    font-size:18px;
+}
+
+
+
+#courses{
+    padding:80px 8%;
+    text-align:center;
+}
+
+
+h2{
+    font-size:40px;
+    margin-bottom:40px;
+}
+
+
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+
+.card{
+    background:#151d38;
+    padding:30px;
+    border-radius:20px;
+    transition:.3s;
+}
+
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 30px #000;
+}
+
+
+
+#about,
+#contact{
+    padding:70px 8%;
+    text-align:center;
+    background:#11182e;
+}
+
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#050914;
+}
+
+
+
+@keyframes float{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+}
+
+
+
+@media(max-width:800px){
+
+header{
+    flex-direction:column;
+    gap:20px;
+}
+
+
+nav{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+}
+
+
+.hero h1{
+    font-size:38px;
+}
+
+}
