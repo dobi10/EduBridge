@@ -209,3 +209,88 @@ nav{
 }
 
 }
+.course-header{
+    text-align:center;
+    padding:80px 8%;
+}
+
+
+.course-header h1{
+    font-size:45px;
+    background:linear-gradient(90deg,#4da6ff,#9b59ff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+
+.course-header p{
+    color:#ccc;
+    font-size:18px;
+    margin:20px;
+}
+
+
+#search{
+    width:60%;
+    padding:15px 20px;
+    border-radius:30px;
+    border:none;
+    outline:none;
+    font-size:16px;
+}
+
+
+
+.course-container{
+    padding:50px 8%;
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+
+
+.course-card{
+    background:#151d38;
+    padding:30px;
+    border-radius:20px;
+    transition:.3s;
+}
+
+
+.course-card:hover{
+    transform:translateY(-10px);
+}
+
+
+.course-card h2{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+
+.course-card p{
+    color:#ccc;
+}
+
+
+.course-card span{
+
+    display:inline-block;
+    margin:20px 0;
+    padding:6px 15px;
+    border-radius:20px;
+    background:#4da6ff;
+
+}
+
+
+
+.course-card button{
+
+    display:block;
+    width:100%;
+    margin-top:10px;
+
+}
