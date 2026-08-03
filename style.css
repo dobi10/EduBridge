@@ -496,3 +496,30 @@ nav{
     width:20%;
 
 }
+.certificate{
+
+    margin:80px auto;
+    max-width:800px;
+    padding:60px;
+    text-align:center;
+
+    background:#151d38;
+    border:5px solid #4da6ff;
+    border-radius:25px;
+
+}
+
+
+.certificate h1{
+
+    font-size:45px;
+    color:#4da6ff;
+
+}
+
+
+.certificate h2{
+
+    margin:25px 0;
+
+}
