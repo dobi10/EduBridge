@@ -410,3 +410,26 @@ nav{
     border-radius:15px;
 
 }
+.quiz{
+    padding:70px 8%;
+    text-align:center;
+}
+
+
+#question{
+
+    background:#151d38;
+    padding:30px;
+    border-radius:20px;
+    font-size:25px;
+
+}
+
+
+#answers button{
+
+    display:block;
+    width:80%;
+    margin:15px auto;
+
+}
