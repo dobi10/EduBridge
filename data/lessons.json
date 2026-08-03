@@ -1,0 +1,39 @@
+{
+  "html": {
+    "title": "HTML Master Course",
+    "lessons": [
+      {
+        "name": "Introduction to HTML",
+        "content": "HTML is the language used to create the structure of websites.",
+        "code": "<h1>Hello World</h1>"
+      },
+      {
+        "name": "HTML Tags",
+        "content": "Learn headings, paragraphs, links and images.",
+        "code": "<p>This is a paragraph</p>"
+      },
+      {
+        "name": "HTML Forms",
+        "content": "Create user input forms.",
+        "code": "<form><input></form>"
+      }
+    ]
+  },
+
+
+  "python": {
+    "title": "Python Programming",
+    "lessons": [
+      {
+        "name": "Python Basics",
+        "content": "Learn variables and programming logic.",
+        "code": "print('Hello World')"
+      },
+      {
+        "name": "Functions",
+        "content": "Learn reusable blocks of code.",
+        "code": "def hello():\n print('Hi')"
+      }
+    ]
+  }
+}
