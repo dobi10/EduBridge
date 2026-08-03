@@ -294,3 +294,83 @@ nav{
     margin-top:10px;
 
 }
+.course-intro{
+    padding:70px 8%;
+    text-align:center;
+}
+
+
+.progress{
+    width:80%;
+    height:15px;
+    background:#222;
+    border-radius:20px;
+    margin:20px auto;
+}
+
+
+.progress-bar{
+    width:20%;
+    height:100%;
+    background:#4da6ff;
+    border-radius:20px;
+}
+
+
+
+.lesson-area{
+
+    display:flex;
+    gap:30px;
+    padding:50px 8%;
+
+}
+
+
+.lesson-list{
+
+    width:30%;
+    background:#151d38;
+    padding:25px;
+    border-radius:20px;
+
+}
+
+
+.lesson-list button{
+
+    width:100%;
+    margin:10px 0;
+
+}
+
+
+
+.lesson-content{
+
+    flex:1;
+    background:#151d38;
+    padding:30px;
+    border-radius:20px;
+
+}
+
+
+
+.complete{
+    margin-top:20px;
+}
+
+
+@media(max-width:800px){
+
+.lesson-area{
+    flex-direction:column;
+}
+
+
+.lesson-list{
+    width:100%;
+}
+
+}
