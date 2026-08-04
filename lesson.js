@@ -1,4 +1,4 @@
-let course = "html";
+let course = localStorage.getItem("selectedCourse") || "html";
 
 
 fetch("data/lessons.json")
