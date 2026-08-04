@@ -558,3 +558,9 @@ gap:20px;
 margin:40px 0;
 
 }
+#editor{
+    width:100%;
+    height:500px;
+    border-radius:15px;
+    overflow:hidden;
+}
