@@ -1,7 +1,6 @@
 function runCode(){
 
-let code =
-document.getElementById("code").value;
+let code = window.editor.getValue();
 
 
 let output =
