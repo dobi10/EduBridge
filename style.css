@@ -564,3 +564,25 @@ margin:40px 0;
     border-radius:15px;
     overflow:hidden;
 }
+.ai-chat{
+    max-width:900px;
+    margin:60px auto;
+    padding:30px;
+}
+
+#chatBox{
+    height:500px;
+    overflow-y:auto;
+    background:#151d38;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+#userMessage{
+    width:100%;
+    padding:15px;
+    border-radius:10px;
+    border:none;
+    margin-bottom:15px;
+}
