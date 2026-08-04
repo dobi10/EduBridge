@@ -1,31 +1,62 @@
-const search = document.getElementById("search");
+// Load all courses
+fetch("data/courses.json")
+.then(response => response.json())
+.then(courses => {
 
-const courses = document.querySelectorAll(".course-card");
+    const container = document.getElementById("courseList");
+    container.innerHTML = "";
 
+    courses.forEach(course => {
 
-search.addEventListener("input",()=>{
+        container.innerHTML += `
+        <div class="course-card">
 
-    const value =
-    search.value.toLowerCase();
+            <h2>${course.name}</h2>
 
+            <p>${course.description}</p>
 
-    courses.forEach(course=>{
+            <span>${course.level}</span>
 
-        const text =
-        course.innerText.toLowerCase();
+            <p>${course.lessons} Lessons</p>
 
+            <button onclick="openCourse('${course.name.toLowerCase()}')">
+                Start Course
+            </button>
 
-        if(text.includes(value)){
+        </div>
+        `;
+    });
 
-            course.style.display="block";
+    // Search functionality
+    const search = document.getElementById("search");
 
-        }else{
+    search.addEventListener("input", () => {
 
-            course.style.display="none";
+        const value = search.value.toLowerCase();
+        const cards = document.querySelectorAll(".course-card");
 
-        }
+        cards.forEach(card => {
+
+            if (card.innerText.toLowerCase().includes(value)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
 
     });
 
-
+})
+.catch(error => {
+    console.error("Error loading courses:", error);
 });
+
+// Open selected course
+function openCourse(course) {
+
+    localStorage.setItem("selectedCourse", course);
+
+    window.location.href = "course.html";
+
+}
