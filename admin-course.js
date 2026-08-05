@@ -1,26 +1,74 @@
+import { db } from "./firebase.js";
+
+import {
+collection,
+addDoc,
+serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+
 document
 .getElementById("publishCourse")
-.addEventListener("click", () => {
+.addEventListener("click", async ()=>{
+
 
 const title =
 document.getElementById("courseTitle").value;
 
+
 const description =
 document.getElementById("courseDescription").value;
+
 
 const level =
 document.getElementById("courseLevel").value;
 
+
 const category =
 document.getElementById("courseCategory").value;
 
-if (!title || !description) {
-    alert("Please fill in all required fields.");
-    return;
+
+
+if(!title || !description){
+
+alert("Fill required fields");
+
+return;
+
 }
 
-alert(`Course "${title}" is ready to publish.`);
 
-// Next step: Save this to Firestore
+
+try{
+
+
+await addDoc(
+collection(db,"courses"),
+{
+
+title,
+description,
+level,
+category,
+
+lessons:0,
+
+createdAt:
+serverTimestamp()
+
+});
+
+
+alert("Course published successfully ✅");
+
+
+}
+
+catch(error){
+
+alert(error.message);
+
+}
+
 
 });
