@@ -1,3 +1,9 @@
+import {
+doc,
+updateDoc,
+increment,
+arrayUnion
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 import { db } from "./firebase.js";
 
 import {
@@ -62,3 +68,70 @@ Submit Quiz
 
 
 loadQuiz();
+document
+.addEventListener("click", async(e)=>{
+
+
+if(e.target.id === "submitQuiz"){
+
+
+let score = 0;
+
+
+questions.forEach((q,index)=>{
+
+
+const answer =
+document.getElementById(
+"answer"+index
+).value;
+
+
+if(answer.toLowerCase().trim()
+=== q.answer.toLowerCase().trim()){
+
+score += q.points || 10;
+
+}
+
+
+});
+
+
+
+const userID =
+localStorage.getItem("userID");
+
+
+
+const userRef =
+doc(db,"users",userID);
+
+
+
+await updateDoc(userRef,{
+
+xp: increment(score),
+
+quizScores: arrayUnion({
+
+courseID: courseID,
+
+score: score,
+
+date: new Date()
+
+})
+
+});
+
+
+
+alert(
+`Quiz finished! You earned ${score} XP 🎉`
+);
+
+
+}
+
+});
