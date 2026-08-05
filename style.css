@@ -617,3 +617,23 @@ select{
     margin:10px 0 20px;
     border-radius:8px;
 }
+.admin-nav{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    padding:20px;
+    background:#11182e;
+}
+
+.admin-nav a{
+    color:white;
+    text-decoration:none;
+    padding:12px 18px;
+    background:#1b2545;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.admin-nav a:hover{
+    background:#4da6ff;
+}
