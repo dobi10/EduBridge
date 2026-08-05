@@ -1,56 +1,92 @@
-let course = localStorage.getItem("selectedCourse") || "html";
+import { db } from "./firebase.js";
+
+import {
+collection,
+getDocs
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 
-fetch("data/lessons.json")
-
-.then(response => response.json())
-
-.then(data=>{
-
-
-const currentCourse = data[course];
-
-
-document.querySelector(".course-intro h1")
-.innerText = currentCourse.title;
-
+const courseID =
+localStorage.getItem("courseID");
 
 
 const lessonList =
 document.querySelector(".lesson-list");
 
 
-lessonList.innerHTML="<h2>Lessons</h2>";
+const lessonContent =
+document.querySelector(".lesson-content");
 
 
 
-currentCourse.lessons.forEach((lesson,index)=>{
+async function loadLessons(){
 
 
-let button =
+const lessonsSnapshot =
+await getDocs(
+
+collection(
+db,
+"courses",
+courseID,
+"lessons"
+)
+
+);
+
+
+
+lessonList.innerHTML =
+"<h2>Lessons</h2>";
+
+
+
+let lessons=[];
+
+
+lessonsSnapshot.forEach(doc=>{
+
+lessons.push(doc.data());
+
+});
+
+
+
+lessons.sort(
+(a,b)=>a.order-b.order
+);
+
+
+
+lessons.forEach((lesson)=>{
+
+
+const button =
 document.createElement("button");
 
 
 button.innerText =
-(index+1)+". "+lesson.name;
-
+lesson.title;
 
 
 button.onclick=()=>{
 
 
-document.querySelector(".lesson-content")
-.innerHTML = `
+lessonContent.innerHTML=`
 
-<h2>${lesson.name}</h2>
+<h2>${lesson.title}</h2>
 
-<p>${lesson.content}</p>
+<p>
+${lesson.content}
+</p>
 
 <h3>Example:</h3>
 
-<pre>${lesson.code}</pre>
+<pre>
+${lesson.code}
+</pre>
 
-<button class="complete">
+<button>
 Complete Lesson
 </button>
 
@@ -59,10 +95,15 @@ Complete Lesson
 };
 
 
+
 lessonList.appendChild(button);
 
 
+
 });
 
 
-});
+}
+
+
+loadLessons();
