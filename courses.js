@@ -65,3 +65,69 @@ window.location.href="course.html";
 
 
 loadCourses();
+const search =
+document.getElementById("searchCourse");
+
+
+const filter =
+document.getElementById("categoryFilter");
+
+
+
+function displayCourses(data){
+
+
+courseList.innerHTML="";
+
+
+data
+
+.filter(course=>{
+
+
+let matchSearch =
+course.title
+.toLowerCase()
+.includes(
+search.value.toLowerCase()
+);
+
+
+
+let matchCategory =
+filter.value==="all" ||
+course.category===filter.value;
+
+
+
+return matchSearch && matchCategory;
+
+
+})
+
+
+.forEach(course=>{
+
+
+courseList.innerHTML += `
+
+<div class="course-card">
+
+<h2>${course.title}</h2>
+
+<p>${course.description}</p>
+
+<p>${course.category}</p>
+
+<button>
+Start Learning
+</button>
+
+</div>
+
+`;
+
+});
+
+
+}
