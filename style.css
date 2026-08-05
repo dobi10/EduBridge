@@ -637,3 +637,55 @@ select{
 .admin-nav a:hover{
     background:#4da6ff;
 }
+.lesson-page{
+    padding:60px 8%;
+}
+
+
+.lesson-layout{
+    display:flex;
+    gap:30px;
+}
+
+
+.lesson-menu{
+    width:30%;
+    background:#151d38;
+    padding:25px;
+    border-radius:20px;
+}
+
+
+.lesson-menu button{
+    width:100%;
+    margin:10px 0;
+}
+
+
+.lesson-content{
+    flex:1;
+    background:#151d38;
+    padding:30px;
+    border-radius:20px;
+}
+
+
+#lessonCode{
+    background:#050914;
+    color:#00ff99;
+    padding:20px;
+    border-radius:15px;
+}
+
+
+@media(max-width:800px){
+
+.lesson-layout{
+    flex-direction:column;
+}
+
+.lesson-menu{
+    width:100%;
+}
+
+}
