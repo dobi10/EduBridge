@@ -86,7 +86,7 @@ ${lesson.content}
 ${lesson.code}
 </pre>
 
-<button>
+<button onclick="completeLesson('${lesson.title}')">
 Complete Lesson
 </button>
 
