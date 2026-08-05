@@ -1,15 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Create Account - CodeSphere</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="manifest" href="manifest.json">
+
+</head>
+
+
+<body>
+
+
+<section class="login-container">
+
+
 <h1>Create Account</h1>
 
-<input id="email" placeholder="Email">
+<p>Start your coding journey today 🚀</p>
 
-<input id="password" 
+
+<input 
+type="text"
+id="name"
+placeholder="Full Name"
+required>
+
+
+<input 
+type="email"
+id="email"
+placeholder="Email Address"
+required>
+
+
+<input 
+type="password"
+id="password"
 placeholder="Password"
-type="password">
+required>
 
 
-<button id="signup">
-Sign Up
+<button id="signupBtn">
+Create Account
 </button>
 
 
-<script type="module" src="auth.js"></script>
+<p>
+Already have an account?
+<a href="login.html">
+Login
+</a>
+</p>
+
+
+<div id="message"></div>
+
+
+</section>
+
+
+
+<script type="module" src="signup.js"></script>
+
+
+</body>
+
+</html>
