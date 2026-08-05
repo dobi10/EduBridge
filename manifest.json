@@ -1,0 +1,16 @@
+{
+"name":"CodeSphere",
+"short_name":"CodeSphere",
+"description":"Learn coding with interactive courses",
+"start_url":"index.html",
+"display":"standalone",
+"background_color":"#0b1020",
+"theme_color":"#4da6ff",
+"icons":[
+{
+"src":"assets/icon.png",
+"sizes":"512x512",
+"type":"image/png"
+}
+]
+}
