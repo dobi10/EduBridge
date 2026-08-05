@@ -131,3 +131,13 @@ Start Learning
 
 
 }
+search.addEventListener(
+"input",
+()=>displayCourses(courses)
+);
+
+
+filter.addEventListener(
+"change",
+()=>displayCourses(courses)
+);
