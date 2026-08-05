@@ -4,9 +4,8 @@ import {
 doc,
 updateDoc,
 arrayUnion,
-getDoc
+increment
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
-
 
 
 const userID = localStorage.getItem("userID");
@@ -24,13 +23,16 @@ doc(db,"users",userID);
 await updateDoc(userRef,{
 
 completedLessons:
-arrayUnion(lessonID)
+arrayUnion(lessonID),
+
+
+xp:
+increment(10)
 
 });
 
 
-
-alert("Lesson completed ✅");
+alert("Lesson completed! +10 XP 🎉");
 
 
 };
