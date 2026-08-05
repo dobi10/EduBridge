@@ -1,62 +1,67 @@
-// Load all courses
-fetch("data/courses.json")
-.then(response => response.json())
-.then(courses => {
+import { db } from "./firebase.js";
 
-    const container = document.getElementById("courseList");
-    container.innerHTML = "";
+import {
+collection,
+getDocs
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
-    courses.forEach(course => {
 
-        container.innerHTML += `
-        <div class="course-card">
+const courseList =
+document.getElementById("courseList");
 
-            <h2>${course.name}</h2>
 
-            <p>${course.description}</p>
+async function loadCourses(){
 
-            <span>${course.level}</span>
+const snapshot =
+await getDocs(collection(db,"courses"));
 
-            <p>${course.lessons} Lessons</p>
 
-            <button onclick="openCourse('${course.name.toLowerCase()}')">
-                Start Course
-            </button>
+courseList.innerHTML="";
 
-        </div>
-        `;
-    });
 
-    // Search functionality
-    const search = document.getElementById("search");
+snapshot.forEach((doc)=>{
 
-    search.addEventListener("input", () => {
+const course = doc.data();
 
-        const value = search.value.toLowerCase();
-        const cards = document.querySelectorAll(".course-card");
 
-        cards.forEach(card => {
+courseList.innerHTML += `
 
-            if (card.innerText.toLowerCase().includes(value)) {
-                card.style.display = "block";
-            } else {
-                card.style.display = "none";
-            }
+<div class="course-card">
 
-        });
+<h2>${course.title}</h2>
 
-    });
+<p>${course.description}</p>
 
-})
-.catch(error => {
-    console.error("Error loading courses:", error);
+<span>${course.level}</span>
+
+<p>${course.category}</p>
+
+<button onclick="openCourse('${doc.id}')">
+Start Course
+</button>
+
+</div>
+
+`;
+
 });
 
-// Open selected course
-function openCourse(course) {
-
-    localStorage.setItem("selectedCourse", course);
-
-    window.location.href = "course.html";
 
 }
+
+
+
+window.openCourse = function(id){
+
+localStorage.setItem(
+"courseID",
+id
+);
+
+window.location.href="course.html";
+
+}
+
+
+
+loadCourses();
