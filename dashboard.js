@@ -22,7 +22,18 @@ if(userSnap.exists()){
 
 
 const user = userSnap.data();
+document.getElementById("badges").innerHTML =
+(user.badges || [])
+.map(b => `<span>${b}</span>`)
+.join("");
 
+
+document.getElementById("quizHistory").innerHTML =
+(user.quizScores || [])
+.map(q => 
+`<p>${q.courseID}: ${q.score} XP</p>`
+)
+.join("");
 
 
 document.getElementById("xp")
