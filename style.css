@@ -791,4 +791,8 @@ display:block;
 
 
 }
+.show{
 
+display:flex;
+
+}
