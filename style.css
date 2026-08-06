@@ -689,3 +689,43 @@ select{
 }
 
 }
+body{
+font-family:Arial, sans-serif;
+margin:0;
+transition:.3s;
+}
+
+
+.card,
+.course-card{
+padding:20px;
+border-radius:15px;
+margin:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+
+button{
+
+padding:12px 20px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+
+}
+
+
+.dark{
+
+background:#10131c;
+color:white;
+
+}
+
+
+.dark .card,
+.dark .course-card{
+
+background:#1c2333;
+
+}
