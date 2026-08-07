@@ -1,2 +1,22 @@
-# EduBridge
-EduBridge is a free learning platform designed to provide accessible education and coding resources for students who cannot afford expensive courses. Our mission is to make quality learning opportunities available to everyone.
+# CodeSphere
+
+A professional coding education platform.
+
+## Features
+
+- Coding courses
+- Interactive lessons
+- Quizzes
+- Progress tracking
+- XP and badges
+- Certificates
+- Community
+- Admin dashboard
+
+## Technologies
+
+- HTML
+- CSS
+- JavaScript
+- Firebase
+- Firestore
