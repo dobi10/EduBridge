@@ -1,52 +1,33 @@
-import { db } from "./firebase.js";
+import { auth, db } from "./firebase.js";
 
 import {
-doc,
-getDoc
+    onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+
+import {
+    doc,
+    getDoc
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 
-const userID =
-localStorage.getItem("userID");
+onAuthStateChanged(auth, async (user) => {
 
+    if (!user) {
+        window.location.replace("login.html");
+        return;
+    }
 
-async function checkAdmin(){
+    const userDoc = await getDoc(
+        doc(db, "users", user.uid)
+    );
 
+    if (!userDoc.exists() ||
+        userDoc.data().role !== "admin") {
 
-const userRef =
-doc(db,"users",userID);
+        alert("Admin access required.");
+        window.location.replace("dashboard.html");
+        return;
+    }
 
-
-const userSnap =
-await getDoc(userRef);
-
-
-
-if(!userSnap.exists()){
-
-window.location.href="login.html";
-
-return;
-
-}
-
-
-
-const user =
-userSnap.data();
-
-
-
-if(user.role !== "admin"){
-
-alert("Access denied");
-
-window.location.href="dashboard.html";
-
-}
-
-
-}
-
-
-checkAdmin();
+    document.body.style.display = "block";
+});
