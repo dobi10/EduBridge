@@ -1,66 +1,48 @@
 import { auth } from "./firebase.js";
 
 import {
-signInWithEmailAndPassword,
-sendPasswordResetEmail,
-signOut
+    signInWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
-const loginBtn = document.getElementById("loginBtn");
 
-loginBtn.onclick = async () => {
-
-const email = document.getElementById("email").value;
-const password = document.getElementById("password").value;
-
-try{
-
-const userCredential =
-await signInWithEmailAndPassword(
-auth,
-email,
-password
-);
-
-window.location.href = "dashboard.html";
-
-}catch(error){
-
-alert(error.message);
-
-}
-
-};
+const form = document.getElementById("loginForm");
 
 
-document.getElementById("resetPassword").onclick = async () => {
+form.addEventListener("submit", async (e) => {
 
-const email = document.getElementById("email").value;
+    e.preventDefault();
 
-if(!email){
-alert("Enter your email first.");
-return;
-}
+    const email =
+        document.getElementById("email").value.trim();
 
-try{
-
-await sendPasswordResetEmail(auth,email);
-
-alert("Password reset email sent.");
-
-}catch(error){
-
-alert(error.message);
-
-}
-
-};
+    const password =
+        document.getElementById("password").value;
 
 
-export async function logout(){
+    try {
 
-await signOut(auth);
+        const result =
+            await signInWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
 
-window.location.href="login.html";
 
-}
+        localStorage.setItem(
+            "userID",
+            result.user.uid
+        );
+
+
+        window.location.href =
+            "dashboard.html";
+
+
+    } catch (error) {
+
+        alert("Login failed: " + error.message);
+
+    }
+
+});
