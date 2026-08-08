@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - CodeSphere</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="about.html">About</a>
+</nav>
+
+<main class="contact-page">
+
+    <h1>Contact CodeSphere</h1>
+    <p>Have a question or found a problem? Send us a message.</p>
+
+    <form id="contactForm">
+
+        <input
+            type="text"
+            id="contactName"
+            placeholder="Your name"
+            required
+        >
+
+        <input
+            type="email"
+            id="contactEmail"
+            placeholder="Your email"
+            required
+        >
+
+        <textarea
+            id="contactMessage"
+            placeholder="Your message"
+            rows="6"
+            required
+        ></textarea>
+
+        <button type="submit">
+            Send Message
+        </button>
+
+    </form>
+
+    <p id="contactStatus"></p>
+
+</main>
+
+<footer>
+    <p>© 2026 CodeSphere. All Rights Reserved.</p>
+</footer>
+
+<script src="contact.js"></script>
+
+</body>
+</html>
