@@ -6,17 +6,25 @@ import {
 
 
 const form = document.getElementById("loginForm");
+const button = document.getElementById("loginBtn");
+const message = document.getElementById("loginMessage");
 
 
-form.addEventListener("submit", async (e) => {
+form.addEventListener("submit", async (event) => {
 
-    e.preventDefault();
+    event.preventDefault();
 
     const email =
         document.getElementById("email").value.trim();
 
     const password =
         document.getElementById("password").value;
+
+
+    button.disabled = true;
+    button.textContent = "Logging in...";
+
+    message.textContent = "";
 
 
     try {
@@ -41,7 +49,13 @@ form.addEventListener("submit", async (e) => {
 
     } catch (error) {
 
-        alert("Login failed: " + error.message);
+        console.error(error);
+
+        message.textContent =
+            "Login failed. Check your email and password.";
+
+        button.disabled = false;
+        button.textContent = "Login";
 
     }
 
