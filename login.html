@@ -1,47 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login - CodeSphere</title>
-<link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | CodeSphere</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="login-container">
+<header class="auth-header">
+    <a href="index.html" class="logo">CodeSphere</a>
+</header>
 
-<h1>Welcome Back</h1>
+<main class="auth-container">
 
-<input
-type="email"
-id="email"
-placeholder="Email Address"
-required>
+    <div class="auth-card">
 
-<input
-type="password"
-id="password"
-placeholder="Password"
-required>
+        <h1>Welcome Back 👋</h1>
 
-<button id="loginBtn">
-Login
-</button>
+        <p>Log in to continue learning.</p>
 
-<p>
-<a href="signup.html">Create Account</a>
-</p>
+        <form id="loginForm">
 
-<p>
-<a href="#" id="resetPassword">
-Forgot Password?</a>
-</p>
+            <label for="email">Email</label>
 
-</div>
+            <input
+                id="email"
+                type="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+            >
 
-<script type="module" src="login.js"></script>
+            <label for="password">Password</label>
+
+            <input
+                id="password"
+                type="password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                required
+            >
+
+            <button
+                type="submit"
+                id="loginBtn">
+                Login
+            </button>
+
+        </form>
+
+        <p id="loginMessage"></p>
+
+        <p class="auth-link">
+            Don't have an account?
+            <a href="signup.html">Create one</a>
+        </p>
+
+        <a href="index.html">
+            ← Back to Home
+        </a>
+
+    </div>
+
+</main>
+
+<script
+    type="module"
+    src="login.js">
+</script>
 
 </body>
 </html>
