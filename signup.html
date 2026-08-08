@@ -3,85 +3,132 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <title>Create Account - CodeSphere</title>
+    <title>Sign Up | CodeSphere</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <main class="auth-page">
+<header class="auth-header">
 
-        <div class="auth-card">
+    <a href="index.html" class="logo">
+        CodeSphere
+    </a>
 
-            <h1>Join CodeSphere 🚀</h1>
-
-            <p>Start learning programming for free.</p>
-
-            <form id="signupForm">
-
-                <label for="name">Full Name</label>
-
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Enter your name"
-                    required
-                >
+</header>
 
 
-                <label for="email">Email</label>
+<main class="auth-container">
 
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="you@example.com"
-                    required
-                >
+    <div class="auth-card">
 
+        <h1>Create Account 🚀</h1>
 
-                <label for="password">Password</label>
-
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="Create a password"
-                    minlength="6"
-                    required
-                >
+        <p>
+            Start your coding journey for free.
+        </p>
 
 
-                <button type="submit">
-                    Create Account
-                </button>
+        <form id="signupForm">
 
-            </form>
+            <label for="name">
+                Full Name
+            </label>
+
+            <input
+                id="name"
+                type="text"
+                placeholder="Your name"
+                autocomplete="name"
+                required
+            >
 
 
-            <p id="signupMessage"></p>
+            <label for="email">
+                Email
+            </label>
+
+            <input
+                id="email"
+                type="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+            >
 
 
-            <p>
-                Already have an account?
-                <a href="login.html">Log in</a>
-            </p>
+            <label for="password">
+                Password
+            </label>
 
-            <a href="index.html">
-                ← Back to CodeSphere
+            <input
+                id="password"
+                type="password"
+                placeholder="Create a password"
+                autocomplete="new-password"
+                minlength="6"
+                required
+            >
+
+
+            <label for="confirmPassword">
+                Confirm Password
+            </label>
+
+            <input
+                id="confirmPassword"
+                type="password"
+                placeholder="Confirm your password"
+                autocomplete="new-password"
+                minlength="6"
+                required
+            >
+
+
+            <button
+                type="submit"
+                id="signupBtn">
+
+                Create Account
+
+            </button>
+
+        </form>
+
+
+        <p id="signupMessage"></p>
+
+
+        <p class="auth-link">
+
+            Already have an account?
+
+            <a href="login.html">
+                Login
             </a>
 
-        </div>
-
-    </main>
+        </p>
 
 
-    <script
-        type="module"
-        src="signup.js">
-    </script>
+        <a href="index.html">
+            ← Back to Home
+        </a>
+
+    </div>
+
+</main>
+
+
+<script
+    type="module"
+    src="signup.js">
+</script>
 
 </body>
 
-                  </html>
+</html>
